@@ -43,4 +43,43 @@ diffecult.forEach(ele=>{
     else{
         ele.style.accentColor = '#ff805e';
     }
+});
+
+// ///////////////////////////////////////////////////////////////////////////
+
+let overlayLogic = document.querySelector('.overlay-logic');
+let closeLogic = document.querySelector('.close-logic');
+let logicProblem = document.querySelectorAll('.name-card-logic > p');
+let menuBtnLogic = document.querySelectorAll('.menu-top-logic > div');
+let help = document.querySelector('.help');
+
+logicProblem.forEach(ele=>{
+    ele.addEventListener('click',e=>{
+        overlayLogic.style.display = 'block';
+    });
+});
+closeLogic.onclick = function(){
+    overlayLogic.style.display = 'none';
+}
+
+menuBtnLogic.forEach(ele=>{
+    ele.addEventListener('click',e=>{
+        console.log(ele.children[1]);
+        ele.children[1].style.display = 'block';
+        setTimeout(()=>{
+            ele.children[1].classList.add('show');
+        },200);
+
+        
+        setTimeout(()=>{
+            ele.children[1].classList.remove('show');
+        },3000);
+
+        setTimeout(()=>{
+            ele.children[1].style.display = 'none';
+        },3500);
+    });
+
 })
+
+// /////////////////////////////////////////////////////////////////////////////
