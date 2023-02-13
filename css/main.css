@@ -12,17 +12,6 @@
     --shodw: 1px 1px 20px 0px rgba(255, 255, 255, 1);
 }
 
-@font-face {
-    font-family: 'Cairo', sans-serif;
-    /* src: url(../webfonts/Cairo-VariableFont_slnt\,wght.ttf); */
-    /* src: url(../webfonts/static/Cairo-Black.ttf);
-    src: url(../webfonts/static/Cairo-ExtraBold.ttf);
-    src: url(../webfonts/static/Cairo-Light.ttf);
-    src: url(../webfonts/static/Cairo-Medium.ttf); */
-    src: url(../fonts/Cairo-VariableFont_slnt\,wght.ttf);
-    /* src: url(../fonts/static/Cairo-SemiBold.ttf); */
-}
-
 body {
     font-family: 'Cairo', sans-serif;
     background-color: var(--main-color);
