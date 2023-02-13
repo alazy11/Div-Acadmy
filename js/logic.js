@@ -31,17 +31,23 @@ console.log(window.top.location.href);
 // }
 // ///////////////////////////////////////////////////////////////
 
-let diffecult = document.querySelectorAll('.diffecult progress');
+let diffecult = document.querySelectorAll('.diffecult .porog-logic .span-prog-logic');
+let diffecultDiv = document.querySelectorAll('.diffecult .porog-logic');
+
+diffecultDiv.forEach(ele=>{
+    console.log();
+})
 
 diffecult.forEach(ele=>{
-    if(ele.value <= 40){
-        ele.style.accentColor = '#04ff04';
+    console.log(parseInt(getComputedStyle(ele).width));
+    if(parseInt(getComputedStyle(ele).width)<= parseInt(getComputedStyle(ele.parentElement).width)*(40 /100)){
+        ele.style.backgroundColor = '#04ff04';
     }
-    else if(ele.value <= 70){
-        ele.style.accentColor = '#fdff5e';
+    else if(parseInt(getComputedStyle(ele).width) <=  parseInt(getComputedStyle(ele.parentElement).width)*(70 /100)){
+        ele.style.backgroundColor = '#fdff5e';
     }
     else{
-        ele.style.accentColor = '#ff805e';
+        ele.style.backgroundColor = '#ff4513';
     }
 });
 

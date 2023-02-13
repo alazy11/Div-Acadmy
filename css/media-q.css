@@ -304,7 +304,7 @@
         border-radius: 5px;
     }
     .overlay-logic .contain-logic {
-        height: 100%;
+        height: 100vh;
         width: 100%;
         padding-top: 35px;
     }
@@ -323,7 +323,7 @@
         padding: 5px 10px;
         margin: 10px 0px;
         font-size: 15px;
-        height: 20%;
+        height: 22%;
     }
 }
 @media (max-width:576px) {
@@ -401,9 +401,14 @@
     .close-code {
         width: 30px;
         height: 30px;
-        font-size: 20px;
-        top: -10px;
-        right: -10px;
+        font-size: 22px;
+        top: 1px;
+        line-height: 1.3;
+        right: 2px;
+        border-radius: 0px;
+    }
+    .contain-code .editor-code {
+        height: 356px;
     }
     .side-menu .btn-side-menu {
         height: 30px;
@@ -440,7 +445,7 @@
         font-size: 12px;
     }
     .section-sh {
-        padding: 40px 10px;
+        padding: 20px 10px;
         padding-bottom: 60px;
     }
     .contain-shapes .tab-menu div {
@@ -493,6 +498,12 @@
         -ms-transform: translateX(85px);
         -o-transform: translateX(85px);
     }
+    .menu-side-source .buttons-menu {
+    padding-top: 20px;}
+    .menu-side-source .buttons-menu .shape-icon-source:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
     /* ////////////////////////////////////////////////////////// */
     .menu-color-generator {
         background-color: var(--white);
@@ -601,8 +612,8 @@
     .overlay-note .close-note, .overlay-logic .close-logic {
         height: 30px;
         width: 30px;
-        top: 0px;
-        right: 0px;
+top: 3px;
+    right: 4px;
         border-radius:  0%;
         -webkit-border-radius:  0%;
         -moz-border-radius:  0%;
@@ -682,5 +693,19 @@
         -moz-transform: rotate(-45deg) translate(1px,-3px);
         -ms-transform: rotate(-45deg) translate(1px,-3px);
         -o-transform: rotate(-45deg) translate(1px,-3px);
-}
+    }
+    .form .btn-edit{
+        display: none;
+    }
+    .contain-solor {
+        margin-right: 0px;
+    }
+    .menu-shape-side{
+        width: 250px;
+    }
+    .contain-code {
+        width: 100%;
+        height: 100%;
+        padding-top: 35px;
+    }
 }

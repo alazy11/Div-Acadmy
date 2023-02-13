@@ -849,13 +849,29 @@ font-weight: 500;
 .result-word span:nth-of-type(1){
     color: rgb(238, 110, 110);
 }
-progress{
+.porog{
     width: 250px;
-    height: 10px;
+    height: 7px;
     animation: error .5s linear  infinite;
     -webkit-animation: error .5s linear  infinite;
     animation-direction: alternate-reverse;
     animation-play-state: paused;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+}
+.span-prog{
+    /* display: block; */
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: var(--primary-dark);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    animation: width .5s linear  infinite;
+    -webkit-animation: width .5s linear  infinite;
 }
 textarea[name='txt']{
     resize: none;
@@ -969,16 +985,50 @@ textarea[name='txt']:focus{
 
 .logic-cards .card-logic .diffecult{
     /* padding: 10px; */
-    padding-right: 9px;
-}
-.logic-cards .card-logic .diffecult progress{
-    display: block;
-    margin-right: -5px;
-    width: 120px;
-    accent-color: #04ff04;
-    /* margin-top: -8px; */
+    /* padding-right: 9px; */
 }
 
+.logic-cards .card-logic .diffecult .porog-logic{
+    width: 120px;
+    height: 5px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+}
+.logic-cards .card-logic .diffecult .porog-logic .span-prog-logic{
+    display: block;
+    height: 100%;
+
+    background-color: var(--primary-dark);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.logic-cards .card-logic:nth-child(1) .diffecult .porog-logic .span-prog-logic{
+    width: 20%;
+}
+.logic-cards .card-logic:nth-child(2) .diffecult .porog-logic .span-prog-logic{
+    width: 50%;
+}
+.logic-cards .card-logic:nth-child(3) .diffecult .porog-logic .span-prog-logic{
+    width: 70%;
+}
+.logic-cards .card-logic:nth-child(4) .diffecult .porog-logic .span-prog-logic{
+    width: 90%;
+}
+.logic-cards .card-logic:nth-child(5) .diffecult .porog-logic .span-prog-logic{
+    width: 40%;
+}
+.logic-cards .card-logic:nth-child(6) .diffecult .porog-logic .span-prog-logic{
+    width: 60%;
+}
+.logic-cards .card-logic:nth-child(7) .diffecult .porog-logic .span-prog-logic{
+    width: 80%;
+}
+.logic-cards .card-logic:nth-child(8) .diffecult .porog-logic .span-prog-logic{
+    width: 55%;
+}
 .overlay-logic{
     position: fixed;
     height: 100%;
@@ -1200,4 +1250,13 @@ textarea[name='txt']:focus{
         -ms-transform: scale(1.06);
         -o-transform: scale(1.06);
 }
+}
+
+@keyframes width {
+    from{
+        width:100%;
+    }
+    to{
+        width: 0%;
+    }
 }

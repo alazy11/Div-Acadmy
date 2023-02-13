@@ -32,6 +32,7 @@ let inputText = document.getElementById("input");
 let wordContainer = document.querySelector(".contain-words");
 let wordResult = document.querySelector(".result-word");
 let buttonRe = document.querySelector(".btn");
+let spanProg = document.querySelector(".span-prog");
 let listLang = document.getElementById('lang');
 
 let gameover = true;
@@ -98,6 +99,7 @@ function setLang(){
 let count = Object.values(wordsArabic).length;
 let countenglish = Object.values(wordsEnglish).length;
 let result = {};
+let coun = 0;
 
 buttonRe.onclick = function(){
     if(gameover)
@@ -112,12 +114,11 @@ function game(){
     inputText.value = "";
     wordResult.innerHTML = "";
     wordResult.classList.remove("show");
-    timeProgress.style.accentColor = "rgb(51 126 227)";
     if(language[0].state === true){
         result = wordsArabic[Math.floor(Math.random() * count + 1)];
         time.innerText = result.duration * 2;
-        timeProgress.max = result.duration * 2;
-        timeProgress.value = result.duration * 2;
+        coun = result.duration * 1000;
+        spanProg.style.animationDuration =`${result.duration}s`;
         wordContainer.innerText = result.value;
         inputText.maxLength = result.value.length;
         getStart();
@@ -125,8 +126,8 @@ function game(){
     else{
         result = wordsEnglish[Math.floor(Math.random() * countenglish + 1)];
         time.innerText = result.duration * 2;
-        timeProgress.max = result.duration * 2;
-        timeProgress.value = result.duration * 2;
+        coun = result.duration * 1000;
+        spanProg.style.animationDuration =`${result.duration}s`;
         wordContainer.innerText = result.value;
         inputText.maxLength = result.value.length;
         getStart();
@@ -134,21 +135,26 @@ function game(){
 }
 
 function getStart(){
-    let coun = setInterval(incr,500);
+    spanProg.style.backgroundColor = "#0e75eb";
+    spanProg.style.display = 'block';
+    let sec = coun - coun * (30 / 100);
+    let coune = setInterval(incr,500);
+
     function incr(){
-        timeProgress.value--;
         time.innerText--;
-        console.log(timeProgress.value);
-        if(timeProgress.value <= timeProgress.max * (25 / 100)){
-            timeProgress.style.accentColor = "red";
-            timeProgress.style.animationPlayState = "running";
-        }
-        if(timeProgress.value <= 0){
-            clearInterval(coun);
-            timeProgress.style.animationPlayState = "paused";
-            gameOver();
+        if(parseInt(time.innerText) <= 0){
+            clearInterval(coune);
         }
     }
+    setTimeout(()=>{
+        timeProgress.style.animationPlayState ="running";
+        spanProg.style.backgroundColor = "red";
+    },sec);
+    setTimeout(()=>{
+      timeProgress.style.animationPlayState = "paused";
+     spanProg.style.display = 'none';
+        gameOver();
+    },coun);
 }
 
 function gameOver(){

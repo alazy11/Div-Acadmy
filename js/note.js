@@ -38,7 +38,6 @@ btnList.onclick = addTOarr;
 //     else
 //     return false;
 // }) 
-
 if(localStorage.getItem("notes"))
 {
     arrInputs = JSON.parse(localStorage.getItem("notes"));
@@ -89,6 +88,32 @@ function addListItem(){
         inp.value = "";
 }
 
+
+let Textlist = document.querySelectorAll('.list-text');
+let overlayNote = document.querySelector('.overlay-note');
+let textNote = document.querySelector('.text-note');
+let closeNote = document.querySelector('.close-note');
+
+
+container.addEventListener('click',e=>{
+    console.log(e.target);
+    if(e.target.className === 'list-text')
+    // ele.addEventListener('click',e=>{
+        textNote.innerText = e.target.innerText;
+        overlayNote.style.display = 'block';
+    // });
+})
+
+// container.forEach(ele=>{
+//     console.log(ele);
+
+// });
+
+closeNote.onclick = function(){
+    overlayNote.style.display = 'none';
+}
+
+
 editFromList();
 function editFromList(){
     container.addEventListener("click",e=>{
@@ -133,18 +158,3 @@ function ResetArr(arr){
     });
 }
 // /////////////////////////////////////////////////////////////////////
-
-let Textlist = document.querySelectorAll('.list-text');
-let overlayNote = document.querySelector('.overlay-note');
-let textNote = document.querySelector('.text-note');
-let closeNote = document.querySelector('.close-note');
-Textlist.forEach(ele=>{
-    ele.addEventListener('click',e=>{
-        textNote.innerText = ele.innerText;
-        overlayNote.style.display = 'block';
-    });
-});
-
-closeNote.onclick = function(){
-    overlayNote.style.display = 'none';
-}
