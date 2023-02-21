@@ -32,12 +32,6 @@ let container=document.getElementById("text-contain");
 let arrInputs = [];
 let editEleId = 0;
 btnList.onclick = addTOarr;
-// document.addEventListener("keydown",e=>{
-//     if(e.key == "Enter")
-//     addTOarr();
-//     else
-//     return false;
-// }) 
 if(localStorage.getItem("notes"))
 {
     arrInputs = JSON.parse(localStorage.getItem("notes"));
@@ -97,17 +91,11 @@ let closeNote = document.querySelector('.close-note');
 
 container.addEventListener('click',e=>{
     console.log(e.target);
-    if(e.target.className === 'list-text')
-    // ele.addEventListener('click',e=>{
+    if(e.target.className === 'list-text'){
         textNote.innerText = e.target.innerText;
         overlayNote.style.display = 'block';
-    // });
+    }
 })
-
-// container.forEach(ele=>{
-//     console.log(ele);
-
-// });
 
 closeNote.onclick = function(){
     overlayNote.style.display = 'none';

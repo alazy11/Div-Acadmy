@@ -13,7 +13,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/tool.css">
+    <link rel="stylesheet" href="./css/designer.css">
     <link rel="stylesheet" href="./css/media-q.css">
+    <link rel="stylesheet" href="./css/media-menu.css">
 </head>
 <body>
     <header>
@@ -36,7 +38,7 @@
             <!-- /////////////////////////////////////////////// -->
             <nav id="nav" class="nav2">
                 <ul class="nav">
-                    <li><a href="./web.html">الرئيسية</a></li>
+                    <li><a href="./index.html">الرئيسية</a></li>
                     <li><a href="./shape.html">الاشكال</a></li>
                     <li><a href="./sources.html">المصادر</a></li>
                     <li><a href="#" class="active">الادوات</a></li>
@@ -60,54 +62,79 @@
                 <div class="tooltip"></div>
             </div>
             <div class="buttons-menu">
-                <a href="./clor-generator.html" title="Colors" data-name="Colors" class="shape-icon-source"><i class="fa-solid fa-palette"></i></a>
-                <a href="./designer.html" title="Designer" data-name="Designer" class="shape-icon-source"><i class="fa-solid fa-pen-ruler"></i></a>
-                <a href="#" title="Notse" data-name="Notse" class="shape-icon-source active"><i class="fa-solid fa-note-sticky"></i></a>
+            <a href="./clor-generator.html" title="Colors" data-name="Colors" class="shape-icon-source"><i class="fa-solid fa-palette"></i></a>
+            <a href="#" title="Designer" data-name="Designer" class="shape-icon-source active"><i class="fa-solid fa-pen-ruler"></i></a>
+            <a href="./notes.html" title="Notse" data-name="Notse" class="shape-icon-source"><i class="fa-solid fa-note-sticky"></i></a>
         </div>
         </div>
         <div class="container">
         <div class="title">
-            <h1>قسم الادوات - الملاحظات</h1>
+            <h1>قسم الادوات - أدوات الالوان</h1>
             <p>ستتعلم هنا كيف تبني او تصمم الاشكال مثل الازرار او الصور او حقول الادخال وغيرها</p>
         </div>
         </div>
         <!-- ///////////////////////////////////////////////// -->
-        <section class="section-sh section-color section-note">
+        <section class="section-sh section-designer">
             <div class="container">
-                <div class="overlay-note">
-                    <div class="container-note">
-                        <div class="close-note">
-                            <i class="fa-solid fa-xmark"></i>
-                        </div>
-                        <h4>ملاحظتك</h4>
-                        <div class="text-note">
-                        </div>
+                <div class="menu-designer">
+                    <h3>الادوات</h3>
+                    <div class="tools-designer">
+                    <div class="square"><i class="fa-solid fa-square"></i>
+                    <span>مربع</span>
                     </div>
-                </div>
-                <div class="menu-note">
-                    <h4>ملاحضاتك</h4>
-                    <div class="text-contain" id="text-contain">
-                        <!-- <div class="list">
-                            <p class="list-text">
-                                jkbsfvkjb.dskjfbkjbfv fvdfvjnbjdf  jndfkj n df jnkjdf kj jnkn fdf df
-                            </p>
-                            <div class="delete"><i class="fa-solid fa-xmark"></i></div>
-                            <div class="edit"><i class="fa-solid fa-pen-to-square"></i></div>
-                        </div> -->
+                    <div class="circle"><i class="fa-solid fa-circle"></i>
+                        <span>دائرة</span>
                     </div>
+                    <div class="text-designer"><i class="fa-solid fa-font"></i>
+                        <span>نص</span>
+                    </div>
+                    <div class="line"><hr>
+                        <span>خط</span>
+                    </div>
+                    </div>
+                    <article class="effects-tool-one">
+                        <div class="color-effect">
+                            <h4>لون الخلفية</h4>
+                            <div class="tool-choice-color">
+                                <div class="contain-color-tool">
+                                <input type="text" name="" id="text-color" readonly dir="ltr">
+                                <div class="tool-choice">
+                                    <label for="color" title="إضغط لاختيار لون">
+                                        <i class="fa-solid fa-eye-dropper"></i>
+                                    </label>
+                                    <div class="color-background"></div>
+                                    <input type="color" name="" id="color" class="color-ch">
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="color-effect border-effect">
+                            <h4>border</h4>
+                            <input type="text" name="color-border" id="text-border" dir="ltr">
+                            <label for="color-border" title="إضغط لاختيار لون">
+                                <i class="fa-solid fa-eye-dropper"></i>
+                            </label>
+                            <div class="color-background-border"></div>
+                            <input type="color" name="" id="color-border" class="color-ch">
+                        </div>
+                        <div class="color-effect wid-effect">
+                            <h4>Width</h4>
+                            <input type="text" name="color-border" id="text-width" dir="ltr">
+                            <h4>Hieght</h4>
+                            <input type="text" name="color-border" id="text-hieght" dir="ltr">
+                        </div>
+                    </article>
                 </div>
-                <div class="left-note">
-                    <div class="form">
-                        <textarea type="text" id="input-note" autocomplete="off" placeholder="اكتب ملاحظاتك ...."></textarea>
-                        <button id="btn">إضافة ملاحظة</button>
-                        <button id="btn-edit">تعديل ملاحظة</button>
+                <div class="contain-designer">
+                    <div class="click-left">
+                        <div>حذف</div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <!-- /////////////////////////////////////////////////////// -->
-    <footer>
+      <!-- /////////////////////////////////////////////////////// -->
+      <footer>
         <div class="container">
             <div class="social-media">                
                 <a href="#" title="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -123,8 +150,8 @@
             </p>
         </div>
     </footer>
-    <!-- /////////////////////////////////////////////////////// -->
+    <!-- //////////////////////////////////////////////////////////// -->
     <script src="./js/web.js"></script>
-    <script src="./js/note.js"></script>
+    <script src="./js/designer.js"></script>
 </body>
 </html>

@@ -13,6 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/tool.css">
+    <link rel="stylesheet" href="./css/written.css">
     <link rel="stylesheet" href="./css/media-q.css">
 </head>
 <body>
@@ -29,7 +30,7 @@
                 <li><a href="./sources.html">المصادر</a></li>
                 <li><a href="./clor-generator.html">الادوات</a></li>
                 <li><a href="#" class="active">المهارات</a></li>
-                <li><a href="#">الطريق للتعلم</a></li>
+                <li><a href="./roud-map.html">الطريق للتعلم</a></li>
             </ul>
             <div class="setting">الاعدادات</div>
             </nav>
@@ -41,7 +42,7 @@
                     <li><a href="./sources.html">المصادر</a></li>
                     <li><a href="./clor-generator.html">الادوات</a></li>
                     <li><a href="#"  class="active">المهارات</a></li>
-                    <li><a href="#">الطريق للتعلم</a></li>
+                    <li><a href="./roud-map.html">الطريق للتعلم</a></li>
                     <li><a href="#">الاعدادات</a></li>
                 </ul>
             </nav>
@@ -75,11 +76,44 @@
         <section class="section-sh section-color section-write">
             <div class="container">
                 <div class="menu-right-write">
-                    <div class="btn-learn-write">تعلم الكتابة</div>
-                    <div class="btn-game-write active">لعبة السرعة</div>
+                    <div class="btn-game-write btn-wrt" data-sec="game">لعبة السرعة</div>
+                    <div class="btn-learn-write btn-wrt active" data-sec="learn">تعلم الكتابة</div>
+                    <div class="btn-lea"><i class="fa-solid fa-caret-down"></i></div>
+                    <div class="btn-letter-contain">
+                        <div class="contain-letter">
+                            <div class="letter1" data-btn="0">كتابة الحرف الف</div>
+                            <div class="letter2" data-btn="1">كتابة الحرف باء</div>
+                            <div class="letter3" data-btn="2">كتابة الحرف تاء</div>
+                            <div class="letter4" data-btn="3">كتابة الحرف ثاء</div>
+                            <div class="letter5" data-btn="4">كتابة الحرف جيم</div>
+                            <div class="letter6" data-btn="5">كتابة الحرف حاء</div>
+                            <div class="letter7" data-btn="6">كتابة الحرف خاء</div>
+                            <div class="letter8" data-btn="7">كتابة الحرف دال</div>
+                            <div class="letter9" data-btn="8">كتابة الحرف ذال</div>
+                            <div class="letter10" data-btn="9">كتابة الحرف راء</div>
+                            <div class="letter11" data-btn="10">كتابة الحرف زين</div>
+                            <div class="letter12" data-btn="11">كتابة الحرف سين</div>
+                            <div class="letter13" data-btn="12">كتابة الحرف شين</div>
+                            <div class="letter14" data-btn="13">كتابة الحرف صاد</div>
+                            <div class="letter15" data-btn="14">كتابة الحرف ضاد</div>
+                            <div class="letter16" data-btn="15">كتابة الحرف طاء</div>
+                            <div class="letter17" data-btn="16">كتابة الحرف ظاء</div>
+                            <div class="letter18" data-btn="17">كتابة الحرف عين</div>
+                            <div class="letter19" data-btn="18">كتابة الحرف غين</div>
+                            <div class="letter20" data-btn="19">كتابة الحرف فاء</div>
+                            <div class="letter21" data-btn="20">كتابة الحرف قاف</div>
+                            <div class="letter22" data-btn="21">كتابة الحرف كاف</div>
+                            <div class="letter23" data-btn="22">كتابة الحرف لام</div>
+                            <div class="letter24" data-btn="23">كتابة الحرف ميم</div>
+                            <div class="letter25" data-btn="24">كتابة الحرف نون</div>
+                            <div class="letter26" data-btn="25">كتابة الحرف هاء</div>
+                            <div class="letter27" data-btn="26">كتابة الحرف واو</div>
+                            <div class="letter28" data-btn="27">كتابة الحرف ياء</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="menu-left-write">
-                    <div class="form-game">
+                    <div class="form-game" data-sec="game">
                         <h2>لعبة لاختبار سرعة الكتابة</h2>
                         <div class="lang">
                             <label for="lang">إختر اللغة: </label>
@@ -98,6 +132,268 @@
                         <div class="result-word"></div>
                         <textarea name="txt" id="input" cols="30" rows="8"></textarea>
                         <button class="btn">إعادة اللعب</button>
+                    </div>
+                    <!-- ///////////////////////////////////////////////////// -->
+                    <div class="contain-letter-skills" data-sec="learn">
+                        <h2> تعلم سرعة الكتابة</h2>
+                        <div class="write-letter">
+                            <div class="wrriten-text">
+                                <p> 
+                                    <span></span>
+                                </p>
+                            </div>
+                            <div class="keyboard">
+                            <div class="input-letter">
+                                <div>
+                                    <span>backspace</span>
+                                    <span>&lt;</span>
+                                </div>
+                                <div>
+                                    <span>+</span>
+                                    <span>=</span>
+                                </div>
+                                <div>
+                                    <span>_</span>
+                                    <span>-</span>
+                                </div>
+                                <div>
+                                    <span>)</span>
+                                    <span>0</span>
+                                </div>
+                                <div>
+                                    <span>(</span>
+                                    <span>9</span>
+                                </div>
+                                <div>
+                                    <span>*</span>
+                                    <span>8</span>
+                                </div>
+                                <div>
+                                    <span>&</span>
+                                    <span>7</span>
+                                </div>
+                                <div>
+                                    <span>^</span>
+                                    <span>6</span>
+                                </div>
+                                <div>
+                                    <span>%</span>
+                                    <span>5</span>
+                                </div>
+                                <div>
+                                    <span>$</span>
+                                    <span>4</span>
+                                </div>
+                                <div>
+                                    <span>#</span>
+                                    <span>3</span>
+                                </div>
+                                <div>
+                                    <span>@</span>
+                                    <span>2</span>
+                                </div>
+                                <div>
+                                    <span>!</span>
+                                    <span>1</span>
+                                </div>
+                                <div>
+                                    <span>esc</span>
+                                </div>
+                            </div>
+                            <div class="input-letter-tow">
+                                <div>
+                                    <span>|</span>
+                                    <span>\</span>
+                                </div>
+                                <div>
+                                    <span>></span>
+                                    <span>د</span>
+                                </div>
+                                <div>
+                                    <span>&gt;</span>
+                                    <span>ج</span>
+                                </div>
+                                <div>
+                                    <span>؛</span>
+                                    <span>ح</span>
+                                </div>
+                                <div>
+                                    <span>×</span>
+                                    <span>خ</span>
+                                </div>
+                                <div>
+                                    <span>÷</span>
+                                    <span>ه</span>
+                                </div>
+                                <div>
+                                    <span>‘</span>
+                                    <span>ع</span>
+                                </div>
+                                <div>
+                                    <span>إ</span>
+                                    <span>غ</span>
+                                </div>
+                                <div>
+                                    <span>لإ</span>
+                                    <span>ف</span>
+                                </div>
+                                <div>
+                                    <span> ٌ </span>
+                                    <span>ق</span>
+                                </div>
+                                <div>
+                                    <span> ُ </span>
+                                    <span>ث</span>
+                                </div>
+                                <div>
+                                    <span> ً </span>
+                                    <span>ص</span>
+                                </div>
+                                <div>
+                                    <span> َ </span>
+                                    <span>ض</span>
+                                </div>
+                                <div>
+                                    <span>tab</span>
+                                </div>
+                            </div>
+                            <div class="input-letter-three">
+                                <div>
+                                    <span>l</span>
+                                    <span>enter</span>
+                                </div>
+                                <div>
+                                    <span>"</span>
+                                    <span>ط</span>
+                                </div>
+                                <div>
+                                    <span>:</span>
+                                    <span>ك</span>
+                                </div>
+                                <div>
+                                    <span>/</span>
+                                    <span>م</span>
+                                </div>
+                                <div>
+                                    <span>،</span>
+                                    <span>ن</span>
+                                </div>
+                                <div>
+                                    <span>ـ</span>
+                                    <span>ت</span>
+                                </div>
+                                <div>
+                                    <span>أ</span>
+                                    <span>ا</span>
+                                </div>
+                                <div>
+                                    <span>لأ</span>
+                                    <span>ل</span>
+                                </div>
+                                <div>
+                                    <span>[</span>
+                                    <span>ب</span>
+                                </div>
+                                <div>
+                                    <span>]</span>
+                                    <span>ي</span>
+                                </div>
+                                <div>
+                                    <span> ٍ </span>
+                                    <span>س</span>
+                                </div>
+                                <div>
+                                    <span> ِ </span>
+                                    <span>ش</span>
+                                </div>
+                                <div>
+                                    <span>caps</span>
+                                </div>
+                            </div>
+                            <div class="input-letter-four">
+                                <div>
+                                    <span>7</span>
+                                    <span>shift</span>
+                                </div>
+                                <div>
+                                    <span>؟</span>
+                                    <span>ظ</span>
+                                </div>
+                                <div>
+                                    <span>.</span>
+                                    <span>ز</span>
+                                </div>
+                                <div>
+                                    <span>,</span>
+                                    <span>و</span>
+                                </div>
+                                <div>
+                                    <span>’</span>
+                                    <span>ة</span>
+                                </div>
+                                <div>
+                                    <span>آ</span>
+                                    <span>ى</span>
+                                </div>
+                                <div>
+                                    <span>لآ</span>
+                                    <span>لا</span>
+                                </div>
+                                <div>
+                                    <span>{</span>
+                                    <span>ر</span>
+                                </div>
+                                <div>
+                                    <span>}</span>
+                                    <span>ؤ</span>
+                                </div>
+                                <div>
+                                    <span> ْ </span>
+                                    <span>ء</span>
+                                </div>
+                                <div>
+                                    <span>~</span>
+                                    <span>ئ</span>
+                                </div>
+                                <div>
+                                    <span>l shift</span>
+                                </div>
+                            </div>
+                            <div class="input-letter-fife">
+                                <div>
+                                    <span>v</span>
+                                </div>
+                                <div>
+                                    <span>m</span>
+                                    <span>x</span>
+                                </div>
+                                <div>
+                                    <span>ctrl</span>
+                                </div>
+                                <div>
+                                    <span>l</span>
+                                </div>
+                                <div>
+                                    <span>alt</span>
+                                </div>
+                                <div>
+
+                                </div>
+                                <div>
+                                    <span>alt</span>
+                                </div>
+                                <div>
+                                    <span>*</span>
+                                </div>
+                                <div>
+                                    <span>fn</span>
+                                </div>
+                                <div>
+                                    <span>ctrl</span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>

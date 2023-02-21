@@ -24,6 +24,42 @@ btnSideMenu.onclick = function(){
     }
 }
 
+
+// ///////////////////////////////////////////////////////////////////////
+let btnWrt = document.querySelectorAll('.btn-wrt');
+let menuLeft = document.querySelectorAll('.menu-left-write > div');
+let btnLetterContain = document.querySelector('.btn-letter-contain');
+let btnLea = document.querySelector('.btn-lea');
+console.log(btnWrt);
+btnWrt.forEach(ele=>{
+    ele.addEventListener('click',e=>{
+        btnWrt.forEach(ee=>{
+            ee.classList.remove('active');
+        });
+        ele.classList.add('active');
+        menuLeft.forEach(el=>{
+            // console.log(el.dataset.sec);
+            // console.log(ele.dataset.sec);
+            if(el.dataset.sec === ele.dataset.sec){
+                console.log('true');
+                el.style.display = 'block';
+            } else{
+                console.log('false');
+                el.style.display = 'none';
+            }
+        })
+    })
+})
+
+btnLea.onclick = function(){
+    // if(el.dataset.sec === 'learn'){
+        btnLetterContain.classList.toggle('hide');
+    // } else{
+        // btnLetterContain.style.height = '0px';
+    // }
+}
+
+
 // ///////////////////////////////////////////////////////////////////////
 
 let time = document.getElementById("tim");
@@ -45,37 +81,38 @@ const language = [{
 
 let wordsArabic = {
     1:{
-        value: "بيت البمي يهابني",
+        value: "إحدى وصايا الرسول صلى الله عليه وسلم قبل مماته هي :الصلاة الصلاة وما ملكت ايمانكم",
         duration: 15
     },
     2:{
-        value: "يب يب سيب سب ريس",
+        value: "إحدى وصايا الرسول صلى الله عليه وسلم قبل مماته هي :اوصيكم بالنساء خيرا",
         duration: 10
     },
     3:{
-        value: "س سيبريبر يب يسبر يبريبريب",
+        value: "إحدى وصايا الرسول صلى الله عليه وسلم قبل مماته هي :الصلاة الصلاة وما ملكت ايمانكم",
         duration: 20
     },
     4:{
-        value: "بللايبللابللا",
+        value:"إحدى وصايا الرسول صلى الله عليه وسلم قبل مماته هي :الصلاة الصلاة وما ملكت ايمانكم",
         duration: 5
     }
 };
+
 let wordsEnglish = {
     1:{
-        value: "dsjkhbkljdscklndc",
+        value: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit iusto impedit, fugiat fuga dolor blanditiis voluptate nam, commodi ea delectus excepturi unde in veritatis ducimus, rerum atque nulla nisi error.",
         duration: 15
     },
     2:{
-        value: "dsjkhbkljdsc",
+        value: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit iusto impedit,",
         duration: 10
     },
     3:{
-        value: "dsjkhbklj dscklndc dsiubhdc",
+        value: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
         duration: 20
     },
     4:{
-        value: "word",
+        value: "Lorem, ipsum dolor sit",
         duration: 5
     }
 };
@@ -166,4 +203,93 @@ function gameOver(){
     wordResult.innerHTML = `الحروف الصحيحة: ${ele.length},<span>   الحروف الخاطئة: ${inputText.value.length - ele.length}</span>, الحروف المتبقية: ${wordContainer.innerText.length - inputText.value.length}`;
     wordResult.classList.add("show");
     gameover = true;
+}
+// ///////////////////////////////////////////////////////////
+let srs = document.querySelector('.wrriten-text p');
+let btnLetter = document.querySelectorAll('.contain-letter div');
+let spanColor = document.querySelector('.wrriten-text p span');
+let textInput = [];
+let i=0;
+let width = 0;
+let statment = [
+    'ااااااااااااا',
+    'بببببببببببببببب',
+    'تتتتتتتتتتتتتتتتت',
+    'ثثثثثثثثثثثثثثثثثثثث',
+    'جججججججججججججججج',
+    'حححححححححححححححححححح',
+    'خخخخخخخخخخخخخخخخخخخ',
+    'ددددددددددددددددددد',
+    'ذذذذذذذذذذذذذذذذذذ',
+    'ررررررررررررررررررر',
+    'ززززززززززززززززززز',
+    'سسسسسسسسسسسسسسسسسسس',
+    'ششششششششششششششششششششش',
+    'صصصصصصصصصصصصصصصصصصصصص',
+    'ضضضضضضضضضضضضضضضضضضضضضض',
+    'ططططططططططططططططططططط',
+    'ظظظظظظظظظظظظظظظظظظظظظظظ',
+    'عععععععععععععععععععععع',
+    'غغغغغغغغغغغغغغغغغغغغغ',
+    'فففففففففففففففففففففف',
+    'ققققققققققققققققققققققق',
+    'كككككككككككككككككككككككك',
+    'للللللللللللللللللللللل',
+    'ممممممممممممممممممممممم',
+    'ننننننننننننننننننننننن',
+    'هههههههههههههههههههههههه',
+    'ووووووووووووووووووووووووو',
+    'يييييييييييييييييييييييييي'
+]
+
+btnLetter.forEach(ele=>{
+    ele.addEventListener('click',e=>{
+        srs.innerHTML = '';
+        srs.innerText = statment[parseInt(ele.dataset.btn)];
+        srs.appendChild(spanColor);
+        spanColor.style.right=0;
+        spanColor.style.width=0;
+        width = 0;
+        i=0;
+        textInput = srs.innerText.split("");
+        learnL();
+    });
+});
+
+
+
+
+
+function learnL(){
+    textInput = srs.innerText.split("");
+    document.addEventListener('keydown',setColor);
+}
+
+function setColor(e){
+    if(textInput[i] == 'س' || textInput[i] == 'ش' || textInput[i] == 'ص' || textInput[i] == 'ض' || textInput[i] == 'ط' || textInput[i] == 'ظ' || textInput[i] == 'ك' || textInput[i] == 'س'){
+        spanColor.style.width = '12px';
+    } else if(textInput[i+1] === " "){
+        spanColor.style.width = '15px';
+    }else{
+        spanColor.style.width = '7px';
+    }
+    if(e.keyCode == 32 && e.target == document.body){
+        e.preventDefault();
+    }
+    if(i === textInput.length){
+        document.removeEventListener('keydown',setColor);  
+    }
+    if(e.key !== textInput[i++]){
+        let sp = spanColor.cloneNode();
+        sp.style.right = width + 'px';
+        sp.style.backgroundColor = "red";
+        srs.appendChild(sp);
+    }
+    else{
+        let sp = spanColor.cloneNode();
+        sp.style.right = width + 'px';
+        srs.appendChild(sp);
+    }
+    width +=parseInt(getComputedStyle(spanColor).width);
+    // console.log(getComputedStyle(spanColor).width);
 }

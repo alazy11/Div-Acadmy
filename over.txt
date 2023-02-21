@@ -1,0 +1,112 @@
+   <div class="overlay-note">
+                    <div class="container-note">
+                        <div class="close-note">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <h4>ملاحظتك</h4>
+                        <div class="text-note">
+                        </div>
+                    </div>
+                </div>
+
+
+
+.overlay-note{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.overlay-note .close-note,
+.overlay-logic .close-logic{
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    top: -15px;
+    right: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.overlay-note .close-note:hover,
+.overlay-logic .close-logic:hover{
+    background-color: rgb(255, 27, 27);
+}
+.overlay-note .container-note{
+    position: relative;
+    background-color: var(--white);
+    padding: 10px;
+    width: 60%;
+    height: 90%;
+    margin: auto;
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.overlay-note .container-note h4{
+    padding: 10px 5px;
+}
+.overlay-note .container-note .text-note{
+    padding: 10px;
+    font-size: 13px;
+    padding-top: 5px;
+}
+.overlay-note .container-note .text-note::-webkit-scrollbar{
+    width: 8px;
+    border-right: 1px solid var(--primary-dark);
+}
+.overlay-note .container-note .text-note::-webkit-scrollbar-track{
+    background-color: var(--primary-dark);
+}
+.overlay-note .container-note .text-note::-webkit-scrollbar-thumb{
+    background-color:#f2f2f2;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+///////////////////////////////////////////////////////////////////////
+let Textlist = document.querySelectorAll('.list-text');
+let overlayNote = document.querySelector('.overlay-note');
+let textNote = document.querySelector('.text-note');
+let closeNote = document.querySelector('.close-note');
+
+
+container.addEventListener('click',e=>{
+    console.log(e.target);
+    if(e.target.className === 'list-text'){
+        textNote.innerText = e.target.innerText;
+        overlayNote.style.display = 'block';
+    }
+})
+
+closeNote.onclick = function(){
+    overlayNote.style.display = 'none';
+}

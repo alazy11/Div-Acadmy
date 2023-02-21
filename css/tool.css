@@ -500,6 +500,10 @@ font-weight: 500;
         height: 60px;
         width: calc(100% / 4);
         cursor: pointer;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
     }
     .card-color-same div:hover{
         opacity: .8;
@@ -514,7 +518,7 @@ font-weight: 500;
 }
 .menu-note{
     width: 40%;
-    height: 100%;
+    /* height: 100%; */
     background-color: white;
     /* border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -611,9 +615,7 @@ font-weight: 500;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
 }
-.form button:hover{
-    background-color: rgb(221, 71, 71);
-}
+
 .form .btn-edit{
     display: none;
 }
@@ -773,7 +775,8 @@ font-weight: 500;
     padding: 10px;
     margin-left: 5px;
 }
-.menu-right-write div{
+.menu-right-write > div:nth-child(1),
+.menu-right-write > div:nth-child(2){
     background-color:#f2f2f2;
     padding: 10px;
     color: var(--primary-dark);
@@ -792,7 +795,8 @@ font-weight: 500;
     -ms-transition: .3s;
     -o-transition: .3s;
 }
-.menu-right-write div:hover,
+.menu-right-write > div:nth-child(1):hover,
+.menu-right-write > div:nth-child(2):hover,
 .menu-right-write div.active{
     background-color: var(--primary-dark);
     color: var(--white);
@@ -800,6 +804,16 @@ font-weight: 500;
 .menu-right-write div:not(:last-child){
     margin-bottom: 5px;
 }
+.menu-right-write .btn-lea{
+    font-size: 28px;
+    height: auto;
+    border-radius: 3px;
+    padding: 2px 14px;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    cursor: pointer;
+}
+
 .menu-left-write{
     width: 70%;
     background-color: var(--white);
@@ -817,6 +831,7 @@ font-weight: 500;
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
     width: 100%;
+    display: none;
 }
 .form-game h2{
     text-align: center;

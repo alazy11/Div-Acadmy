@@ -1,3 +1,4 @@
+
 let navEffect = document.querySelector(".effect-nav");
 let containShape = document.querySelector(".contain-shape");
 let navItems = document.querySelectorAll(".nav li a");
@@ -7,7 +8,6 @@ let overLayMenu = document.querySelector(".overlay-menu");
 let nav = document.getElementById("nav");
 let btnMenu = document.querySelector(".btn-menu i");
 let onloade = document.querySelector(".onloade");
-
 // ///////////////////////////////////////////////////////
 btnUp.onclick = function (){
     window.scrollTo({
@@ -78,8 +78,74 @@ navItems.forEach(ele=>{
 });
 
 // //////////////////////////////////////////////////////
+// let linkSource = document.querySelector('.linkSource');
+// let shapeIconSource1 = document.querySelectorAll('.buttons-menu > .shape-icon-source');
+// let cardSource = document.querySelectorAll('.card-source');
+// console.log(shapeIconSource1);
+// console.log((cardSource[0].dataset.name === shapeIconSource1[1].dataset.name));
+// cardSource.forEach(ele=>{
+//     ele.addEventListener('click',e=>{
+//         console.log(ele);
+//         shapeIconSource1.forEach(el=>{
+//             el.classList.remove('active');
+//         });
+//         shapeIconSource1.forEach(elem=>{
+//             if(elem.dataset.name === ele.dataset.name){
+//                 elem.classList.add('active');
+//                 console.log(elem);
+//                 console.log(ele);
+//             }
+//         });
+//         // window.location = '../sources.html';
+//         console.log(linkSource);
+//         setTimeout(()=>{
+//             linkSource.click();
+//         },200)
+
+//         // window.open('../sources.html');
+//     });
+// });
+let linkSource = document.querySelector('.linkSource');
+let cardSource = document.querySelectorAll('.card-source');
 
 
+cardSource.forEach(ele=>{
+    ele.addEventListener('click',e=>{
+        localStorage.setItem('cardSource',`${ele.dataset.name}`);
+        setTimeout(()=>{
+            linkSource.click();
+        },200)
+    });
+});
+
+
+let cardRoud = document.querySelectorAll('.card-roud p');
+let linkRoud = document.querySelector('.card-ro');
+console.log(cardRoud);
+cardRoud.forEach(ele=>{
+    ele.addEventListener('click',e=>{
+        console.log(ele);
+        localStorage.setItem('cardRoud',`${ele.dataset.name}`);
+        // shapeIconSource1.forEach(el=>{
+        //     console.log(el);
+        //     el.classList.remove('active');
+        // });
+        // shapeIconSource1.forEach(elem=>{
+        //     if(elem.dataset.name === ele.dataset.name){
+        //         elem.classList.add('active');
+        //         console.log(elem);
+        //         console.log(ele);
+        //     }
+        // });
+        // // window.location = '../sources.html';
+        console.log(linkRoud);
+        setTimeout(()=>{
+            linkRoud.click();
+        },200)
+
+        // window.open('../sources.html');
+    });
+});
 
 /////////////////////////////////////////////////////////////////////
 

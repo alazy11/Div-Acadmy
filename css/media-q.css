@@ -4,6 +4,12 @@
     .contain-shape .left-shape {
         width: 45%;
     }
+    .step:nth-of-type(odd) {
+        right: 17.4%;
+    }
+    .step:nth-of-type(even) {
+        left: 17.4%;
+    }
 }
 @media (max-width:992px) {
     .landing{
@@ -51,6 +57,12 @@
     /* /////////////////////////////////////////////////// */
     .contain-code{
         width: 70%;
+    }
+    .step:nth-of-type(odd) {
+        right: 16.4%;
+    }
+    .step:nth-of-type(even) {
+        left: 16.4%;
     }
 }
 
@@ -279,14 +291,20 @@
         align-items: center;
         border-radius: 5px;
     }
-    .menu-right-write div {
+    .menu-right-write > div {
         background-color: #f2f2f2;
         padding: 10px 20px;
         margin-left: 10px;
         font-size: 13px;
+
     }
-    .menu-right-write div:not(:last-child) {
+    .menu-right-write div:not(:last-child){
         margin-bottom: 0px;
+    }
+    .menu-right-write div:nth-child(1),
+    .menu-right-write div:nth-child(2){
+        margin-bottom: 0px;
+        font-size: 12px;
     }
     .menu-right-write {
         width: 100%;
@@ -299,12 +317,16 @@
         border-radius: 5px;
         margin-bottom: 10px;
     }
+    .menu-right-write .btn-lea {
+        font-size: 25px;
+    }
+   
     .menu-left-write {
         width: 100%;
         border-radius: 5px;
     }
     .overlay-logic .contain-logic {
-        height: 100vh;
+        height: 100%;
         width: 100%;
         padding-top: 35px;
     }
@@ -318,13 +340,45 @@
         -moz-border-radius: 0%;
         -ms-border-radius: 0%;
         -o-border-radius: 0%;
-    }
+}
     .descibtion-logic {
         padding: 5px 10px;
         margin: 10px 0px;
         font-size: 15px;
         height: 22%;
     }
+    .step {
+        width: 40%;
+    }
+    .step:nth-of-type(odd) {
+        right: 5.3%;
+    }
+    .step:nth-of-type(even) {
+        left: 5.3%;
+    }
+        /*///////////////////////////////////////////////  */
+        div.btn-letter-contain{
+            height: 0px;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 57px;
+        z-index: 100;
+        opacity: 0;
+        width: 164px;
+        padding: 10px;
+        }
+        .btn-letter-contain.hide{
+            height: 666px;
+        } 
+        .btn-letter-contain .contain-letter div {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px;
+        }
+        .contain-letter-skills h2 {
+            font-size: 14px;
+        }
 }
 @media (max-width:576px) {
     .btn-menu{
@@ -628,10 +682,10 @@ top: 3px;
     }
     /* //////////////////////////////////////////////////////////////////// */
     .form-game h2 {
-        font-size: 16px;
+        font-size: 15px;
     }
     .lang label {
-        font-size: 13px;
+        font-size: 12px;
     }
     .lang select {
         font-size: 12px;
@@ -707,5 +761,55 @@ top: 3px;
         width: 100%;
         height: 100%;
         padding-top: 35px;
+    }
+    .step {
+        width: 42%;
+        font-size: 11px;
+    }
+    .step:nth-of-type(odd) {
+        right: 2.5%;
+    }
+    .step:nth-of-type(even) {
+        left: 2.5%;
+    }
+    .step h4 {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+    .middle-map {
+        width: 6px;
+    } 
+    .step::before, .step::before {
+        width: 22px;
+        height: 22px;
+        font-size: 15px;
+    }
+    .keyboard > div > div {
+        height: 40px;
+        font-size: 10px;
+    }
+}
+@media (max-width:400px) {
+    .step:nth-of-type(odd) {
+        right: 0%;
+    }
+    .step:nth-of-type(even) {
+        left: 0%;
+    }
+    .keyboard > div > div {
+        height: 32px;
+        font-size: 10px;
+        padding: 0px;
+    }
+    .keyboard > div > div span:first-child {
+        position: absolute;
+        top: 1px;
+    }
+    .menu-right-write div:nth-child(1), .menu-right-write div:nth-child(2) {
+        margin-bottom: 0px;
+        font-size: 10px;
+    }
+    .menu-right-write .btn-lea {
+        font-size: 23px;
     }
 }

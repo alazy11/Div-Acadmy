@@ -1,0 +1,114 @@
+@import url('./main.css');
+
+.section-sh{
+    background-color: #f2f2f2;
+}
+
+.contain-map{
+    overflow: hidden;
+}
+/* .right-map{
+    flex: calc(97% / 2);
+} */
+.middle-map{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 100%;
+    background-color: var(--primary-dark);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+/* .left-map{
+    flex: calc(97% / 2);
+} */
+.step{
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 7px;
+    position: relative;
+    width: 30%;
+    font-size: 13px;
+    padding-bottom: 15px;
+}
+.step h4{
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.step:not(:last-of-type){
+    margin-bottom: 30px;
+}
+.step:nth-of-type(odd){
+    float: right;
+    right: 17.7%;
+}
+
+.step:nth-of-type(even){
+    float: left;
+    left: 17.7%;
+}
+.clear{
+    clear: both;
+}
+
+.step::after,
+.step::after{
+    content: "";
+    position: absolute;
+    border: 11px solid;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.step::before,
+.step::before{
+    content: attr(data-num);
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--primary-dark);
+    background-color: var(--white);
+    color: var(--primary-dark);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.step:nth-of-type(odd)::after{
+    border-color: transparent var(--white) transparent transparent;
+    left: -22px;
+}
+.step:nth-of-type(even)::after{
+    border-color: transparent transparent transparent var(--white);
+    right: -22px;
+}
+.step:nth-of-type(odd)::before{
+    left: -38px;
+}
+.step:nth-of-type(even)::before{
+    right: -38px;
+}

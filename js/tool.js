@@ -129,7 +129,7 @@ colorSearchDegree.onclick = function(){
                 else
                 b+=5;
             }
-            console.log(r + '|' + g + '|' +b);
+            // console.log(r + '|' + g + '|' +b);
             rgb(r,g,b);
         }
         savedColor(ara,colorChoicedDeg,'color-hs-deg','color-back-deg','color1-deg');
@@ -160,11 +160,12 @@ function savedColor(arra,clc,class1,class2,class3){
         color1.appendChild(colorHs);
         clc.appendChild(color1);
     }
+    copyColor();
 }
 
 colorChoiced.querySelectorAll('.color1').forEach(ele=>{
     ele.addEventListener('click',e=>{
-        navigator.clipboard.writeText = ele.lastElementChild.innerText;
+        navigator.clipboard.writeText(ele.lastElementChild.innerText);
         let val = ele.lastElementChild.innerText;
         ele.lastElementChild.innerText = 'تم النسخ';
         setTimeout(()=>{
@@ -173,16 +174,19 @@ colorChoiced.querySelectorAll('.color1').forEach(ele=>{
     });
 });
 
-// colorChoicedDeg.querySelectorAll('.color1-deg').forEach(ele=>{
-//     ele.addEventListener('click',e=>{
-//         navigator.clipboard.writeText = ele.lastElementChild.innerText;
-//         let val = ele.lastElementChild.innerText;
-//         ele.lastElementChild.innerText = 'تم النسخ';
-//         setTimeout(()=>{
-//             ele.lastElementChild.innerText = val;
-//         },1000);
-//     });
-// });
+function copyColor(){
+    colorChoicedDeg.querySelectorAll('.color1-deg').forEach(ele=>{
+        ele.addEventListener('click',e=>{
+            navigator.clipboard.writeText(ele.lastElementChild.innerText);
+            let val = ele.lastElementChild.innerText;
+            ele.lastElementChild.innerText = 'تم النسخ';
+            setTimeout(()=>{
+                ele.lastElementChild.innerText = val;
+            },1000);
+        });
+    });
+    
+}
 
 // ///////////////////////////////////////////////////////////////
 let mainColorSame = document.querySelectorAll('.main-color-same > div');
@@ -200,6 +204,19 @@ mainColorSame.forEach((ele,ind)=>{
     ele.querySelectorAll('div').forEach((el,i)=>{
         el.style.backgroundColor = `${arrCol[ind][i]}`;
     });
+});
+
+mainColorSame.forEach((ele,ind)=>{
+    ele.querySelectorAll('div').forEach((el)=>{
+        el.addEventListener('click',e=>{
+            console.log(getComputedStyle(e.target).backgroundColor);
+            navigator.clipboard.writeText(getComputedStyle(e.target).backgroundColor);
+            e.target.innerText = 'تم النسخ';
+            setTimeout(()=>{
+                e.target.innerText = '';
+            },1000)
+        })
+    })
 });
 
 // ///////////////////////////////////////////////////////////////

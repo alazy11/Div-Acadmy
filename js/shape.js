@@ -171,6 +171,39 @@ let codeMenu = [{
     <span class="prop">font-size</span>:<span> 15px;</span>
     <span class="tag">}</span>
 `
+},
+{
+    name : 'icon',
+    codeShape : `
+<div class="burger-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>`,
+    countHTML: 5,
+    codeHTML : `<span>&lt;div&gt;</span>
+    <span>&lt;span&gt;</span><span>&lt;/span&gt;</span>
+    <span>&lt;span&gt;</span><span>&lt;/span&gt;</span>
+    <span>&lt;span&gt;</span><span>&lt;/span&gt;</span>
+<span>&lt;/div&gt;</span>`,
+    countCss: 17,
+    codeCss : `<span class="tag">div{</span>
+    <span class="prop">width</span>:<span> 60px;</span>
+    <span class="prop">height</span>:<span> 45px;</span>
+    <span class="prop">border-radius</span>:<span> 3px;</span>
+    <span class="prop">cursor</span>:<span> pointer;</span>
+    <span class="prop">padding</span>:<span> 5px;</span>
+    <span class="prop">background-color</span>:<span> #0e75eb;</span>
+    <span class="tag">}</span>
+    
+    <span class="tag">div span{</span>
+    <span class="prop">display</span>:<span> block;</span>
+    <span class="prop">width</span>:<span> 100%;</span>
+    <span class="prop">height</span>:<span> 6px;</span>
+    <span class="prop">border-radius</span>:<span> inherit;</span>
+    <span class="prop">background-color</span>:<span> #fff;</span>
+    <span class="prop">margin-bottom</span>:<span> 8px;</span>
+    <span class="tag">}</span>`
 }
 ];
 
