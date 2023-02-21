@@ -110,11 +110,6 @@ shapeIconSource.forEach(ele=>{
     }
     if(ele.classList.contains('active')){
         setSource(ele);
-        shapeIconSource.forEach(el=>{
-            el.classList.remove('active');
-        });
-        shapeIconSource[0].classList.add('active');
-        localStorage.setItem('cardSource', shapeIconSource[0].dataset.name)
     }
 });
 
