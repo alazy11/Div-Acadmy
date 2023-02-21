@@ -161,18 +161,21 @@ function savedColor(arra,clc,class1,class2,class3){
         clc.appendChild(color1);
     }
     copyColor();
+    copyColor2();
 }
 
-colorChoiced.querySelectorAll('.color1').forEach(ele=>{
-    ele.addEventListener('click',e=>{
-        navigator.clipboard.writeText(ele.lastElementChild.innerText);
-        let val = ele.lastElementChild.innerText;
-        ele.lastElementChild.innerText = 'تم النسخ';
-        setTimeout(()=>{
-            ele.lastElementChild.innerText = val;
-        },1000);
+function copyColor2(){
+    colorChoiced.querySelectorAll('.color1').forEach(ele=>{
+        ele.addEventListener('click',e=>{
+            navigator.clipboard.writeText(ele.lastElementChild.innerText);
+            let val = ele.lastElementChild.innerText;
+            ele.lastElementChild.innerText = 'تم النسخ';
+            setTimeout(()=>{
+                ele.lastElementChild.innerText = val;
+            },1000);
+        });
     });
-});
+}
 
 function copyColor(){
     colorChoicedDeg.querySelectorAll('.color1-deg').forEach(ele=>{
